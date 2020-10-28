@@ -83,7 +83,7 @@ def process_data(cur, conn, filepath, func):
 
     Parameters:
         cur (psycopg2.cursor()): Cursor of the sparkifydb database
-        conn (psycopg2.connect()): Connectio to the sparkifycdb database
+        conn (psycopg2.connect()): Connection to the sparkifycdb database
         filepath (str): Filepath parent of the logs to be analyzed
         func (python function): Function to be used to process each log
 
