@@ -1,3 +1,54 @@
+``` py
+import psycopg2
+from sql_queries import create_table_queries, drop_table_queries
+
+def main() :
+  """ Start connection and cursor for create database, drop and create table
+  """
+  cur, conn = create_database()
+
+  drop_tables(cur, conn)
+  create_tables(cur, conn)
+
+  cur.close()
+  conn.close()
+
+if __name__ == "__main__":
+  main()
+
+def create_database():
+  conn = psycopg2.connect("host=127.0.0.1 dbname=sparkify user=student password=student")
+  conn.set_session(autocommit=True)
+  cur = conn.cursor()
+
+  # Create sparkify database
+  cur.execute("DROP DATABASE IF EXISTS sparkifydb")
+  cur.execute("CREATE DATABASE IF NOT EXISTS sparkifydb WITH ENCODING 'utf8' TEMPLATE template0")
+  cur.close()
+  conn.close()
+
+  # Connect to sparkify database
+  conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
+  cur = conn.cursor()
+
+  return cur, conn
+
+
+def drop_tables(cur, conn):
+  """Drops all tables created on the database"""
+  for query in drop_table_queries:
+    cur.execute(query)
+    conn.commit()
+
+def create_tables(cur, conn):
+  """Create all tables on the database"""
+  for query in create_table_queries:
+    cur.execute(query)
+    conn.commit()
+
+```
+
+
 ``` sql
 -- DROP TABLES
 

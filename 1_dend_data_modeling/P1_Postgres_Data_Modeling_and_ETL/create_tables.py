@@ -1,7 +1,6 @@
 import psycopg2
 from sql_queries import create_table_queries, drop_table_queries
 
-
 def create_database():
     '''Creates and connects to sparkifydb database. Returns cursor and connection to DB'''
     # connect to default database
