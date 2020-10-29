@@ -28,7 +28,7 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
-    """Reads user activity log file row by row, filters by NexSong, selects needed fields, transforms them and inserts
+    """Reads user activity log file row by row, filters by NextSong, selects needed fields, transforms them and inserts
     them into time, user and songplay tables.
 
             Parameters:
