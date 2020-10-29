@@ -17,7 +17,7 @@ if __name__ == "__main__":
   main()
 
 def create_database():
-  conn = psycopg2.connect("host=127.0.0.1 dbname=sparkify user=student password=student")
+  conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
   conn.set_session(autocommit=True)
   cur = conn.cursor()
 
@@ -163,7 +163,7 @@ song_select = ("""
 
 create_table_queries = [create_table_songplays, create_table_users, create_table_songs, create_table_artists, create_table_time]
 
-drop_table_queries = [drop_table_songplays, drop_table_users, drop_table_songs, drop_table_artists, drop_table_time],
+drop_table_queries = [drop_table_songplays, drop_table_users, drop_table_songs, drop_table_artists, drop_table_time]
 ```
 
 ``` python
@@ -180,7 +180,7 @@ def main():
   """ Function used to extract, transform all data from song_data and log_data and load it into a PostgreSQL DB
   """
 
-  conn = psycopg2.connect("host: 127.0.0.1 dbname=sparkify user=student password=student")
+  conn = psycopg2.connect("host: 127.0.0.1 dbname=sparkifydb user=student password=student")
   cur = conn.cursor()
 
   process_data(cur, conn, filepath="data/song_data", func=process_song_data)
