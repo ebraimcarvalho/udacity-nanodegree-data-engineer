@@ -161,6 +161,6 @@ Prerequisites:
 13. The last step is inserting everything we need into our songplay fact table.
 
 
-## Authors
+## Authors who inspired this
 
 * **Florencia Silvestre** - [Github](https://github.com/Flor91) - [LinkedIn](https://www.linkedin.com/in/florencia-silvestre-2683587b/)
